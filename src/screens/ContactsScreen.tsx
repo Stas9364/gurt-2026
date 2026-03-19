@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { contactsData } from "@/data/contacts";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 
 const contactIcons: Record<string, React.ReactNode> = {
@@ -45,7 +46,7 @@ export function ContactsScreen() {
       />
 
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact info */}
             <div>
@@ -176,7 +177,7 @@ export function ContactsScreen() {
               </form>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Map placeholder */}
@@ -211,7 +212,7 @@ export function ContactsScreen() {
 
       {/* Requisites */}
       <section className="py-16 border-t border-border bg-surface/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <h3 className="font-mono-tech text-sm text-[var(--accent)] tracking-widest uppercase mb-6">
             Банковские реквизиты
           </h3>
@@ -233,7 +234,7 @@ export function ContactsScreen() {
               </p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

@@ -1,8 +1,9 @@
-﻿import { FadeIn } from "@/components/common/FadeIn";
+import { FadeIn } from "@/components/common/FadeIn";
 import { aboutData } from "@/data/about";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 
 export function AboutScreen() {
@@ -16,7 +17,7 @@ export function AboutScreen() {
 
       {/* Story */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <SectionHeader index="01" eyebrow="История" title={aboutData.story.title} />
@@ -50,12 +51,12 @@ export function AboutScreen() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Values */}
       <section className="py-20 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="03" eyebrow="Принципы" title="Наши ценности" centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {aboutData.values.map((value, i) => (
@@ -72,12 +73,12 @@ export function AboutScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Team */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="04" eyebrow="Люди" title={aboutData.team.title} subtitle={aboutData.team.subtitle} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {aboutData.team.roles.map((role, i) => (
@@ -94,12 +95,12 @@ export function AboutScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* University partnership */}
       <section className="py-20 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <SectionHeader index="05" eyebrow="Партнёрство" title={aboutData.university.title} />
             <div>
@@ -114,12 +115,12 @@ export function AboutScreen() {
               </ul>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Licenses */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="06" eyebrow="Документы" title="Лицензии и сертификаты" />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {aboutData.licenses.map((lic, i) => (
@@ -143,18 +144,18 @@ export function AboutScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}
       <section className="py-20 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container className="text-center">
           <h2 className="font-inter text-4xl md:text-5xl font-700 uppercase mb-4">Готовы к сотрудничеству</h2>
           <p className="text-muted-foreground mb-8">30 лет на рынке — обращайтесь.</p>
           <ContactButton href="/contacts" variant="primary" className="px-10 py-4 text-base">
             Связаться с нами →
           </ContactButton>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

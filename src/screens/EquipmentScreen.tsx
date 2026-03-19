@@ -1,9 +1,10 @@
-﻿import { FadeIn } from "@/components/common/FadeIn";
+import { FadeIn } from "@/components/common/FadeIn";
 import { equipmentData } from "@/data/equipment";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { EquipmentCard } from "@/components/common/EquipmentCard";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 
 export function EquipmentScreen() {
@@ -17,7 +18,7 @@ export function EquipmentScreen() {
 
       {/* Stats bar */}
       <div className="border-b border-border bg-surface/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <Container className="py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {equipmentData.stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -31,7 +32,7 @@ export function EquipmentScreen() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Equipment by category */}
@@ -40,7 +41,7 @@ export function EquipmentScreen() {
           key={category.id}
           className={`py-20 ${catIdx % 2 === 1 ? "bg-surface/20 border-y border-border" : ""}`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container>
             <SectionHeader
               index={`0${catIdx + 1}`}
               eyebrow="Оборудование"
@@ -60,13 +61,13 @@ export function EquipmentScreen() {
                 </FadeIn>
               ))}
             </div>
-          </div>
+          </Container>
         </section>
       ))}
 
       {/* CTA */}
       <section className="py-20 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="font-mono-tech text-sm text-[var(--accent)] tracking-widest">ПОДХОДИТ ПОД ВАШУ ЗАДАЧУ?</span>
@@ -86,7 +87,7 @@ export function EquipmentScreen() {
               </ContactButton>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

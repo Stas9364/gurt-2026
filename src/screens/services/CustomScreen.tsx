@@ -3,6 +3,7 @@ import { customData } from "@/data/services/custom";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 
 export function CustomScreen() {
@@ -16,7 +17,7 @@ export function CustomScreen() {
 
       {/* Process steps */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader
             index="01"
             eyebrow="Как это работает"
@@ -43,12 +44,12 @@ export function CustomScreen() {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* File formats */}
       <section className="py-20 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="02" eyebrow="Форматы" title="Принимаемые форматы" />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {customData.formats.map((fmt, i) => (
@@ -62,12 +63,12 @@ export function CustomScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Advantages */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="03" eyebrow="Преимущества" title="Почему выбирают нас" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {customData.advantages.map((adv, i) => (
@@ -82,12 +83,12 @@ export function CustomScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Industries */}
       <section className="py-20 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="04" eyebrow="Клиенты" title="Обслуживаемые отрасли" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {customData.industries.map((ind, i) => (
@@ -102,7 +103,7 @@ export function CustomScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}

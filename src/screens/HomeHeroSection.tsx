@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { ContactButton } from "@/components/common/ContactButton";
 import { WanderingBlob } from "@/components/common/WanderingBlob";
+import { Container } from "@/components/layout/Container";
 import { homeData } from "@/data/home";
 
 const fadeUp: Variants = {
@@ -67,7 +68,7 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
       )}
 
       {/* ── Контент ── */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" style={{ zIndex: 3 }}>
+      <Container className="relative py-24" style={{ zIndex: 3 }}>
         <div className="max-w-6xl">
           <motion.div
             initial="hidden" animate="visible" variants={fadeUp} custom={0}
@@ -121,7 +122,7 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
             </div>
           </div>
         )}
-      </div>
+      </Container>
 
       {/* Scroll-индикатор */}
       <motion.div

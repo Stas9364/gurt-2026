@@ -6,6 +6,7 @@ import { portfolioData, type PortfolioCategory } from "@/data/portfolio";
 import { PageHero } from "@/components/common/PageHero";
 import { PortfolioCard } from "@/components/common/PortfolioCard";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { cn } from "@/lib/utils";
 
@@ -27,7 +28,7 @@ export function PortfolioScreen() {
 
       {/* Filter tabs */}
       <div className="sticky top-16 z-30 border-b border-border bg-background/95 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="flex items-center gap-1 overflow-x-auto py-3 scrollbar-none">
             {portfolioData.categories.map((cat) => (
               <button
@@ -47,12 +48,12 @@ export function PortfolioScreen() {
               {filtered.length} объектов
             </span>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Grid */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <AnimatePresence mode="popLayout">
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-stretch"
@@ -81,12 +82,12 @@ export function PortfolioScreen() {
               ))}
             </motion.div>
           </AnimatePresence>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}
       <section className="py-20 border-t border-border bg-surface/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container className="text-center">
           <h2 className="font-inter text-3xl sm:text-4xl md:text-5xl font-700 uppercase mb-4">
             Нужна похожая деталь?
           </h2>
@@ -96,7 +97,7 @@ export function PortfolioScreen() {
           <ContactButton href="/contacts" variant="primary" className="px-10 py-4 text-base">
             Обсудить заказ →
           </ContactButton>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

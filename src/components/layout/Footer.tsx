@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import Link from "next/link";
+import { Container } from "@/components/layout/Container";
 
 const serviceLinks = [
   { label: "Токарные работы", href: "/services/turning" },
@@ -17,7 +18,7 @@ const companyLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-[var(--bg-secondary)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Container className="py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -146,7 +147,7 @@ export function Footer() {
             ISO 9001 / Допуски до 0.01 мм / Беларусь — Россия
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

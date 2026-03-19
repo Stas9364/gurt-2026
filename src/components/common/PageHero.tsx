@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Container } from "@/components/layout/Container";
 
 interface PageHeroProps {
   eyebrow?: string;
@@ -22,7 +23,7 @@ export function PageHero({ eyebrow, title, subtitle, className, children }: Page
       {/* Radial gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(var(--accent-rgb),0.06)_0%,transparent_60%)]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container className="relative">
         {eyebrow && (
           <div className="flex items-center gap-3 mb-4">
             <span className="w-10 h-px bg-[var(--accent)]" />
@@ -40,7 +41,7 @@ export function PageHero({ eyebrow, title, subtitle, className, children }: Page
           </p>
         )}
         {children}
-      </div>
+      </Container>
     </section>
   );
 }

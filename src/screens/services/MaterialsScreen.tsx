@@ -1,9 +1,10 @@
-﻿import { FadeIn } from "@/components/common/FadeIn";
+import { FadeIn } from "@/components/common/FadeIn";
 import { materialsData } from "@/data/services/materials";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { TechSpec } from "@/components/common/TechSpec";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 
 export function MaterialsScreen() {
@@ -17,7 +18,7 @@ export function MaterialsScreen() {
 
       {/* Materials grid */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="01" eyebrow="Виды металлов" title="Обрабатываемые материалы" />
           <div className="space-y-6">
             {materialsData.materials.map((mat, i) => (
@@ -53,12 +54,12 @@ export function MaterialsScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Note about customer material */}
       <section className="py-16 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="flex gap-6 items-start border border-[rgba(var(--accent-rgb),0.3)] bg-[rgba(var(--accent-rgb),0.05)] p-8">
             <div className="shrink-0 w-10 h-10 border border-[var(--accent)] flex items-center justify-center text-[var(--accent)]">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -71,12 +72,12 @@ export function MaterialsScreen() {
               <p className="text-sm text-muted-foreground leading-relaxed">{materialsData.note.text}</p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}
       <section className="py-20 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container className="text-center">
           <h2 className="font-inter text-4xl md:text-5xl font-700 uppercase mb-4">
             Нужна обработка вашего материала?
           </h2>
@@ -84,7 +85,7 @@ export function MaterialsScreen() {
           <ContactButton href="/contacts" variant="primary" className="px-10 py-4 text-base">
             Получить расчёт →
           </ContactButton>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

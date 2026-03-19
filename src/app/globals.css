@@ -8,26 +8,26 @@
    ══════════════════════════════════════════════ */
 :root {
   /* ── Backgrounds ── */
-  --bg-main:        #0D0D0F;   /* Jet Black — основной фон               */
-  --bg-card:        #151517;   /* Чуть светлее основного фона            */
-  --bg-secondary:   #111113;   /* Вторичный слой для полос/футера        */
-  --bg-deep:        #09090A;   /* Самый тёмный фон под медиа             */
+  --bg-main: #0d0d0f; /* Jet Black — основной фон               */
+  --bg-card: #151517; /* Чуть светлее основного фона            */
+  --bg-secondary: #111113; /* Вторичный слой для полос/футера        */
+  --bg-deep: #09090a; /* Самый тёмный фон под медиа             */
 
   /* ── Text ── */
-  --text-title:     #FFFFFF;   /* Белый для заголовков                   */
-  --text-body:      #FFFFFF;   /* Белый основной текст (по запросу)      */
-  --text-mono:      #D4D4D4;   /* Чуть мягче для техданных               */
+  --text-title: #ffffff; /* Белый для заголовков                   */
+  --text-body: #ffffff; /* Белый основной текст (по запросу)      */
+  --text-mono: #d4d4d4; /* Чуть мягче для техданных               */
 
   /* ── Accent ── */
-  --accent:         #C5A059;   /* Золотисто-бронзовый акцент             */
-  --accent-hover:   #D3B171;   /* Светлее на hover                       */
-  --accent-dark:    #A68445;   /* Темнее на active                       */
+  --accent: #c5a059; /* Золотисто-бронзовый акцент             */
+  --accent-hover: #d3b171; /* Светлее на hover                       */
+  --accent-dark: #a68445; /* Темнее на active                       */
 
   /* ── Borders ── */
-  --border-color:   #262626;   /* Линии/сетки                            */
+  --border-color: #262626; /* Линии/сетки                            */
 
   /* ── Accent с прозрачностью (для rgba() и blob-анимаций) ── */
-  --accent-rgb:     197, 160, 89;
+  --accent-rgb: 197, 160, 89;
 
   /* ── Blob-анимации ── */
   --blob-duration-1: 19s;
@@ -37,28 +37,28 @@
 
 @theme {
   /* ── Brand colors → Tailwind-токены ── */
-  --color-background:           var(--bg-main);
-  --color-foreground:           var(--text-title);
-  --color-surface:              var(--bg-card);
-  --color-surface-elevated:     var(--bg-secondary);
+  --color-background: var(--bg-main);
+  --color-foreground: var(--text-title);
+  --color-surface: var(--bg-card);
+  --color-surface-elevated: var(--bg-secondary);
 
   /* ── shadcn/ui required ── */
-  --color-card:                 var(--bg-card);
-  --color-card-foreground:      var(--text-title);
-  --color-popover:              var(--bg-card);
-  --color-popover-foreground:   var(--text-title);
-  --color-primary:              var(--accent);
-  --color-primary-foreground:   #ffffff;
-  --color-secondary:            var(--bg-secondary);
+  --color-card: var(--bg-card);
+  --color-card-foreground: var(--text-title);
+  --color-popover: var(--bg-card);
+  --color-popover-foreground: var(--text-title);
+  --color-primary: var(--accent);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--bg-secondary);
   --color-secondary-foreground: var(--text-title);
-  --color-muted:                var(--bg-secondary);
-  --color-muted-foreground:     var(--text-body);
-  --color-accent:               var(--accent);
-  --color-accent-foreground:    #ffffff;
-  --color-destructive:          #ef4444;
-  --color-border:               var(--border-color);
-  --color-input:                var(--border-color);
-  --color-ring:                 var(--accent);
+  --color-muted: var(--bg-secondary);
+  --color-muted-foreground: var(--text-body);
+  --color-accent: var(--accent);
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-border: var(--border-color);
+  --color-input: var(--border-color);
+  --color-ring: var(--accent);
 
   /* ── Radius ── */
   --radius: 0.25rem;
@@ -114,36 +114,84 @@
 /* ── Blob wander animations (pure CSS, no JS) ── */
 
 @keyframes blob-wander-1 {
-  0%   { transform: translate(0px,    0px); }
-  12%  { transform: translate(90px,  -55px); }
-  27%  { transform: translate(-70px,  110px); }
-  41%  { transform: translate(140px,  40px); }
-  58%  { transform: translate(-50px, -90px); }
-  73%  { transform: translate(80px,   130px); }
-  88%  { transform: translate(-120px, 20px); }
-  100% { transform: translate(0px,    0px); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  12% {
+    transform: translate(90px, -55px);
+  }
+  27% {
+    transform: translate(-70px, 110px);
+  }
+  41% {
+    transform: translate(140px, 40px);
+  }
+  58% {
+    transform: translate(-50px, -90px);
+  }
+  73% {
+    transform: translate(80px, 130px);
+  }
+  88% {
+    transform: translate(-120px, 20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes blob-wander-2 {
-  0%   { transform: translate(0px,   0px); }
-  15%  { transform: translate(-90px, 70px); }
-  33%  { transform: translate(110px, -60px); }
-  48%  { transform: translate(-40px, 120px); }
-  62%  { transform: translate(130px, 30px); }
-  79%  { transform: translate(-80px, -100px); }
-  91%  { transform: translate(60px,  80px); }
-  100% { transform: translate(0px,   0px); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: translate(-90px, 70px);
+  }
+  33% {
+    transform: translate(110px, -60px);
+  }
+  48% {
+    transform: translate(-40px, 120px);
+  }
+  62% {
+    transform: translate(130px, 30px);
+  }
+  79% {
+    transform: translate(-80px, -100px);
+  }
+  91% {
+    transform: translate(60px, 80px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes blob-wander-3 {
-  0%   { transform: translate(0px,   0px); }
-  18%  { transform: translate(70px, -100px); }
-  36%  { transform: translate(-110px, 50px); }
-  52%  { transform: translate(90px,  90px); }
-  67%  { transform: translate(-60px, -70px); }
-  83%  { transform: translate(120px, -30px); }
-  94%  { transform: translate(-40px, 110px); }
-  100% { transform: translate(0px,   0px); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  18% {
+    transform: translate(70px, -100px);
+  }
+  36% {
+    transform: translate(-110px, 50px);
+  }
+  52% {
+    transform: translate(90px, 90px);
+  }
+  67% {
+    transform: translate(-60px, -70px);
+  }
+  83% {
+    transform: translate(120px, -30px);
+  }
+  94% {
+    transform: translate(-40px, 110px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 /* ── Scrollbar ── */

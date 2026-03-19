@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/common/FadeIn";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ServiceCard } from "@/components/common/ServiceCard";
 import { StatCard } from "@/components/common/StatCard";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { homeData } from "@/data/home";
 import { HomeHeroSection } from "./HomeHeroSection";
@@ -45,7 +46,7 @@ export function HomeScreen() {
 
       {/* ── STATS ── */}
       <section className="border-y border-border bg-surface/50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {homeData.stats.map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
@@ -58,12 +59,12 @@ export function HomeScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── SERVICES ── */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader
             index="02"
             eyebrow="Что мы делаем"
@@ -84,12 +85,12 @@ export function HomeScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── PRODUCTS ── */}
       <section className="py-24 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader
             index="03"
             eyebrow="Наша продукция"
@@ -123,12 +124,12 @@ export function HomeScreen() {
               Смотреть всё портфолио →
             </ContactButton>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── GEOGRAPHY ── */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
@@ -163,12 +164,12 @@ export function HomeScreen() {
               <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-[var(--accent)]/50 rounded-full animate-pulse delay-600" />
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── CTA ── */}
       <section className="py-24 border-t border-border bg-surface/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-mono-tech text-sm text-[var(--accent)] tracking-[0.3em] uppercase">Начать работу</span>
             <h2 className="font-inter text-3xl sm:text-4xl md:text-6xl font-700 uppercase mt-3 mb-5 text-foreground">
@@ -184,7 +185,7 @@ export function HomeScreen() {
               </ContactButton>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

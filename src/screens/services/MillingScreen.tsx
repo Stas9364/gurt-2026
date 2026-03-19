@@ -1,9 +1,10 @@
-﻿import { FadeIn } from "@/components/common/FadeIn";
+import { FadeIn } from "@/components/common/FadeIn";
 import { millingData } from "@/data/services/milling";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { TechSpec } from "@/components/common/TechSpec";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 
 export function MillingScreen() {
@@ -17,7 +18,7 @@ export function MillingScreen() {
 
       {/* Capabilities */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="01" eyebrow="Возможности" title="Виды фрезерования" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {millingData.capabilities.map((cap, i) => (
@@ -32,12 +33,12 @@ export function MillingScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Operations + Tolerances */}
       <section className="py-20 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <SectionHeader index="02" eyebrow="Операции" title="Виды работ" />
@@ -63,12 +64,12 @@ export function MillingScreen() {
               />
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Materials */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="04" eyebrow="Материалы" title="Обрабатываемые металлы" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {millingData.materials.map((mat, i) => (
@@ -82,7 +83,7 @@ export function MillingScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* FAQ */}
@@ -104,7 +105,7 @@ export function MillingScreen() {
 
       {/* CTA */}
       <section className="py-20 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container className="text-center">
           <h2 className="font-inter text-4xl md:text-5xl font-700 uppercase mb-4">Нужно фрезерование?</h2>
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
             Отправьте чертёж или 3D-модель. Расчёт — бесплатно, ответ — в день обращения.
@@ -112,7 +113,7 @@ export function MillingScreen() {
           <ContactButton href="/contacts" variant="primary" className="px-10 py-4 text-base">
             Отправить чертёж →
           </ContactButton>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );

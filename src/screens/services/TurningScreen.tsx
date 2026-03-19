@@ -1,9 +1,10 @@
-﻿import { FadeIn } from "@/components/common/FadeIn";
+import { FadeIn } from "@/components/common/FadeIn";
 import { turningData } from "@/data/services/turning";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { TechSpec } from "@/components/common/TechSpec";
 import { ContactButton } from "@/components/common/ContactButton";
+import { Container } from "@/components/layout/Container";
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { Badge } from "@/components/ui/badge";
 
@@ -18,7 +19,7 @@ export function TurningScreen() {
 
       {/* Capabilities */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="01" eyebrow="Возможности" title="Виды обработки" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {turningData.capabilities.map((cap, i) => (
@@ -33,12 +34,12 @@ export function TurningScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Operations + Tolerances */}
       <section className="py-20 bg-surface/30 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <SectionHeader index="02" eyebrow="Операции" title="Виды работ" />
@@ -64,12 +65,12 @@ export function TurningScreen() {
               />
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Materials */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeader index="04" eyebrow="Материалы" title="Обрабатываемые металлы" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {turningData.materials.map((mat, i) => (
@@ -83,7 +84,7 @@ export function TurningScreen() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* FAQ */}
@@ -105,7 +106,7 @@ export function TurningScreen() {
 
       {/* CTA */}
       <section className="py-20 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container className="text-center">
           <Badge className="bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)] border border-[rgba(var(--accent-rgb),0.3)] font-mono-tech text-sm tracking-widest rounded-none px-3 py-1 mb-4">
             ОТПРАВИТЬ ЗАПРОС
           </Badge>
@@ -118,7 +119,7 @@ export function TurningScreen() {
           <ContactButton href="/contacts" variant="primary" className="px-10 py-4 text-base">
             Отправить чертёж →
           </ContactButton>
-        </div>
+        </Container>
       </section>
     </PageWrapper>
   );
