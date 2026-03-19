@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { portfolioData, type PortfolioCategory } from "@/data/portfolio";
 import { PageHero } from "@/components/common/PageHero";
 import { PortfolioCard } from "@/components/common/PortfolioCard";
@@ -55,12 +55,12 @@ export function PortfolioScreen() {
       <section className="py-16">
         <Container>
           <AnimatePresence mode="popLayout">
-            <motion.div
+            <m.div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-stretch"
               layout
             >
               {filtered.map((item) => (
-                <motion.div
+                <m.div
                   key={item.id}
                   layout
                   initial={{ opacity: 0, scale: 0.96 }}
@@ -78,9 +78,9 @@ export function PortfolioScreen() {
                     tolerance={item.tolerance}
                     className="h-full"
                   />
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </Container>
       </section>

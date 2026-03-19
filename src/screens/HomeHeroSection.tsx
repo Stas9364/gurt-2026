@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 import { ContactButton } from "@/components/common/ContactButton";
 import { WanderingBlob } from "@/components/common/WanderingBlob";
 import { Container } from "@/components/layout/Container";
@@ -70,7 +70,7 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
       {/* ── Контент ── */}
       <Container className="relative py-24" style={{ zIndex: 3 }}>
         <div className="max-w-6xl">
-          <motion.div
+          <m.div
             initial="hidden" animate="visible" variants={fadeUp} custom={0}
             className="flex items-center gap-3 mb-6"
           >
@@ -78,9 +78,9 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
             <span className="font-mono-tech text-sm text-[var(--accent)] tracking-[0.3em] uppercase">
               {homeData.hero.eyebrow}
             </span>
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
             className="font-inter text-4xl sm:text-5xl md:text-7xl lg:text-[6.5rem] font-bold uppercase leading-[1] md:leading-[0.95] tracking-tight text-foreground mb-8"
           >
@@ -89,16 +89,16 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
             <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-400 tracking-normal text-muted-foreground mt-3 normal-case">
               от одного эскиза до серийного производства
             </span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
             className="max-w-2xl text-muted-foreground text-base md:text-lg leading-relaxed mb-10"
           >
             {homeData.hero.subtitle}
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial="hidden" animate="visible" variants={fadeUp} custom={3}
             className="flex flex-wrap gap-4"
           >
@@ -109,7 +109,7 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
             <ContactButton href="/equipment" variant="outline" className="text-base px-8 py-3.5">
               {homeData.hero.ctaSecondary}
             </ContactButton>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Координаты — скрываем поверх видео чтобы не мешать */}
@@ -125,14 +125,14 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
       </Container>
 
       {/* Scroll-индикатор */}
-      <motion.div
+      <m.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         style={{ zIndex: 3 }}
       >
         <div className="w-px h-8 bg-gradient-to-b from-[rgba(var(--accent-rgb),0.6)] to-transparent" />
-      </motion.div>
+      </m.div>
     </section>
   );
 }

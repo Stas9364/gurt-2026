@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { contactsData } from "@/data/contacts";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeader } from "@/components/common/SectionHeader";
@@ -88,7 +88,7 @@ export function ContactsScreen() {
               {/* Contact list */}
               <div className="space-y-3">
                 {contactsData.contacts.map((contact, i) => (
-                  <motion.a
+                  <m.a
                     key={contact.type}
                     href={contact.href}
                     initial={{ opacity: 0, x: -16 }}
@@ -111,7 +111,7 @@ export function ContactsScreen() {
                       </p>
                     </div>
                     <span className="text-sm text-muted-foreground shrink-0">{contact.note}</span>
-                  </motion.a>
+                  </m.a>
                 ))}
               </div>
 
