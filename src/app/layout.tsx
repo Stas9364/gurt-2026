@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { LazyMotionProvider } from "@/components/providers/LazyMotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,7 +35,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <LazyMotionProvider>{children}</LazyMotionProvider>
       </body>
     </html>
   );

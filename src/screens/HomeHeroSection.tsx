@@ -35,7 +35,7 @@ export function HomeHeroSection({ videoSrc }: HomeHeroSectionProps) {
             className="absolute inset-0 w-full h-full object-cover"
             style={{ zIndex: 0 }}
           >
-            <source src={videoSrc} type="video/mp4" />
+            <source src={videoSrc} type="video/webm" />
           </video>
 
           {/* Тёмный градиент поверх видео — читаемость текста */}

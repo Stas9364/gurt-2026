@@ -49,14 +49,13 @@ export function HomeScreen() {
         <Container>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {homeData.stats.map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.1}>
                 <StatCard
+                  key={stat.label}
                   value={stat.value}
                   unit={stat.unit || undefined}
                   label={stat.label}
                   description={stat.description}
                 />
-              </FadeIn>
             ))}
           </div>
         </Container>
